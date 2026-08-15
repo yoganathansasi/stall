@@ -1,8 +1,8 @@
 @echo off
-title Sasi Maligai Kadai - Project Runner
+title Sasi Tea Stall - Project Runner
 
 echo ===================================================
-echo Sasi Maligai Kadai - Premium Tea Shop Website
+echo Sasi Tea Stall - Premium Tea Shop Website
 echo ===================================================
 echo.
 

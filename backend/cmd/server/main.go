@@ -16,7 +16,7 @@ import (
 )
 
 func main() {
-	log.Println("Starting Sasi Maligai Kadai backend server...")
+	log.Println("Starting Sasi Tea Stall backend server...")
 
 	// 1. Load config
 	cfg := config.Load()

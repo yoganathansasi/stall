@@ -1,4 +1,4 @@
--- Sasi Maligai Kadai Database Schema
+-- Sasi Tea Stall Database Schema
 
 -- Drop tables if they exist
 DROP TABLE IF EXISTS contact_submissions;

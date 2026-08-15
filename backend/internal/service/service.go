@@ -80,7 +80,7 @@ func (s *Service) SubmitReview(ctx context.Context, rev *model.Review) error {
 
 func (s *Service) GetShopInfo() model.ShopInfo {
 	return model.ShopInfo{
-		Name:    "Sasi Maligai Kadai",
+		Name:    "Sasi Tea Stall",
 		Address: "Mariyamman Kovil Street, Jolarpet, Edayampatti, Tirupattur District",
 		Phone:   "+91 97892 90902",
 		Email:   "info@sasimaligaikadai.com",

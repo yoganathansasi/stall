@@ -49,7 +49,7 @@ export default function Navbar() {
       <div className={styles.navContainer}>
         {/* Branding Logo */}
         <div className={styles.logoContainer} onClick={() => handleNavClick("home")}>
-          <span className={styles.logoText}>Sasi Maligai Kadai</span>
+          <span className={styles.logoText}>Sasi Tea Stall</span>
           <span className={styles.logoSubText}>Tea &amp; Provisions</span>
         </div>
 

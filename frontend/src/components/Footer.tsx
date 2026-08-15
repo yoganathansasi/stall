@@ -18,7 +18,7 @@ export default function Footer() {
         <div className={styles.grid}>
           {/* Brand Info */}
           <div className={styles.brandCol}>
-            <h2 className={styles.logoText}>Sasi Maligai Kadai</h2>
+            <h2 className={styles.logoText}>Sasi Tea Stall</h2>
             <span className={styles.logoSubText}>Tea &amp; Provisions</span>
             <p className={styles.brandDesc}>
               A trusted local shop serving quality tea, snacks, groceries, and everyday essentials. Providing hospitality and convenience to Jolarpet for decades.
@@ -68,7 +68,7 @@ export default function Footer() {
         {/* Bottom Bar */}
         <div className={styles.bottomBar}>
           <p className={styles.copyright}>
-            &copy; {currentYear} Sasi Maligai Kadai. All rights reserved.
+            &copy; {currentYear} Sasi Tea Stall. All rights reserved.
           </p>
           <p className={styles.signature}>
             Crafted for elegance &amp; trust by{" "}
@@ -78,7 +78,7 @@ export default function Footer() {
               target="_blank"
               rel="noopener noreferrer"
             >
-              Sasi Maligai Kadai
+              Sasi Tea Stall
             </a>
           </p>
         </div>

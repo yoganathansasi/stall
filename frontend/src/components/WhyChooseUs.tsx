@@ -34,7 +34,7 @@ export default function WhyChooseUs() {
         {/* Header */}
         <div className={styles.header}>
           <span className="title-sub">Our Commitment</span>
-          <h2 className={styles.heading}>Why Choose Sasi Maligai Kadai</h2>
+          <h2 className={styles.heading}>Why Choose Sasi Tea Stall</h2>
         </div>
 
         {/* Highlights Grid */}

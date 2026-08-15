@@ -1,7 +1,7 @@
 "use client";
 
 import React, { useState, useEffect } from "react";
-import { Star, MessageSquarePlus } from "lucide-react";
+import { Star, MessageSquarePlus, ChevronLeft, ChevronRight } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import styles from "./Reviews.module.css";
 
@@ -14,10 +14,33 @@ interface Review {
 
 const FALLBACK_REVIEWS: Review[] = [
   { id: 1, name: "Ramesh Kumar", rating: 5, comment: "The masala tea here is unmatched in Tirupattur! Crisp vadas and warm hospitality make it my daily stop." },
-  { id: 2, name: "Priya Sundar", rating: 5, comment: "Sasi Maligai Kadai is where I buy all my kitchen spices. The hand-ground turmeric and chili powders are so pure." },
+  { id: 2, name: "Priya Sundar", rating: 5, comment: "Sasi Tea Stall is where I buy all my kitchen spices. The hand-ground turmeric and chili powders are so pure." },
   { id: 3, name: "Anand Raj", rating: 4, comment: "Excellent service and premium quality grains. The freshly brewed cardamom tea is a must-try after a long day." },
   { id: 4, name: "Suresh Chandran", rating: 5, comment: "Highly convenient shop. Clean, well-stocked with essentials, and they serve the best filter coffee in Jolarpet." }
 ];
+
+const slideVariants = {
+  enter: (direction: number) => ({
+    x: direction > 0 ? 100 : -100,
+    opacity: 0,
+  }),
+  center: {
+    x: 0,
+    opacity: 1,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  },
+  exit: (direction: number) => ({
+    x: direction < 0 ? 100 : -100,
+    opacity: 0,
+    transition: {
+      duration: 0.3,
+      ease: "easeInOut",
+    },
+  }),
+};
 
 export default function Reviews() {
   const [reviews, setReviews] = useState<Review[]>(FALLBACK_REVIEWS);
@@ -26,6 +49,15 @@ export default function Reviews() {
   const [hoverRating, setHoverRating] = useState<number | null>(null);
   const [submitStatus, setSubmitStatus] = useState<"idle" | "submitting" | "success" | "error">("idle");
   const [errorMessage, setErrorMessage] = useState("");
+
+  const [[page, direction], setPage] = useState([0, 0]);
+
+  const displayReviews = reviews.slice(0, 3);
+  const activeIndex = displayReviews.length > 0 ? Math.abs(page % displayReviews.length) : 0;
+
+  const paginate = (newDirection: number) => {
+    setPage([page + newDirection, newDirection]);
+  };
 
   const fetchReviews = () => {
     const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
@@ -246,33 +278,74 @@ export default function Reviews() {
             </AnimatePresence>
           </div>
 
-          {/* Right Column: Asymmetrical Card Display */}
-          <div className={styles.reviewsColumn}>
-            {reviews.map((rev, idx) => (
-              <motion.div
-                key={rev.id || idx}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ duration: 0.6, delay: idx * 0.08, ease: "easeOut" }}
-                whileHover={{ y: -6, scale: 1.01 }}
-                className={styles.reviewCard}
-              >
-                <div className={styles.cardHeader}>
-                  <h3 className={styles.reviewerName}>{rev.name}</h3>
-                  <div className={styles.cardStars}>
-                    {[1, 2, 3, 4, 5].map((star) => (
-                      <Star
-                        key={star}
-                        size={14}
-                        fill={star <= rev.rating ? "currentColor" : "none"}
-                      />
-                    ))}
-                  </div>
+          {/* Right Column: Carousel Display (Max 5 reviews) */}
+          <div className={styles.carouselWrapper}>
+            <div className={styles.carouselContainer}>
+              <div className={styles.carouselCardWrapper}>
+                <AnimatePresence initial={false} custom={direction} mode="wait">
+                  {displayReviews.length > 0 && (
+                    <motion.div
+                      key={page}
+                      custom={direction}
+                      variants={slideVariants}
+                      initial="enter"
+                      animate="center"
+                      exit="exit"
+                      className={styles.reviewCard}
+                    >
+                      <div className={styles.cardHeader}>
+                        <h3 className={styles.reviewerName}>{displayReviews[activeIndex].name}</h3>
+                        <div className={styles.cardStars}>
+                          {[1, 2, 3, 4, 5].map((star) => (
+                            <Star
+                              key={star}
+                              size={14}
+                              fill={star <= displayReviews[activeIndex].rating ? "currentColor" : "none"}
+                            />
+                          ))}
+                        </div>
+                      </div>
+                      <p className={styles.comment}>“{displayReviews[activeIndex].comment}”</p>
+                    </motion.div>
+                  )}
+                </AnimatePresence>
+              </div>
+            </div>
+
+            {/* Carousel Controls */}
+            {displayReviews.length > 1 && (
+              <div className={styles.carouselControls}>
+                <button
+                  type="button"
+                  onClick={() => paginate(-1)}
+                  className={styles.carouselBtn}
+                  aria-label="Previous Review"
+                >
+                  <ChevronLeft size={20} />
+                </button>
+                
+                <div className={styles.dotsContainer}>
+                  {displayReviews.map((_, idx) => (
+                    <button
+                      key={idx}
+                      type="button"
+                      onClick={() => setPage([idx, idx > activeIndex ? 1 : -1])}
+                      className={`${styles.dot} ${idx === activeIndex ? styles.dotActive : ""}`}
+                      aria-label={`Go to slide ${idx + 1}`}
+                    />
+                  ))}
                 </div>
-                <p className={styles.comment}>“{rev.comment}”</p>
-              </motion.div>
-            ))}
+
+                <button
+                  type="button"
+                  onClick={() => paginate(1)}
+                  className={styles.carouselBtn}
+                  aria-label="Next Review"
+                >
+                  <ChevronRight size={20} />
+                </button>
+              </div>
+            )}
           </div>
         </div>
       </div>

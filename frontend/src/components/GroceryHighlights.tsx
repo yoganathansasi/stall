@@ -74,9 +74,9 @@ export default function GroceryHighlights() {
               transition={{ duration: 0.8 }}
             >
               <span className="title-sub">Maligai Essentials</span>
-              <h2 className={styles.heading}>The SMK Grocery Collection</h2>
+              <h2 className={styles.heading}>The Grocery Collection</h2>
               <p className={styles.description}>
-                Beyond our brewed beverages, Sasi Maligai Kadai offers a select stock of daily kitchen essentials. We deal in quality ingredients, hand-selected to ensure your household receives authentic flavors and healthy options.
+                Beyond our brewed beverages, Sasi Tea Stall offers a select stock of daily kitchen essentials. We deal in quality ingredients, hand-selected to ensure your household receives authentic flavors and healthy options.
               </p>
             </motion.div>
 

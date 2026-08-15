@@ -46,7 +46,7 @@ export default function BrandIntro() {
               “A trusted local shop serving quality tea, snacks, groceries, and everyday essentials.”
             </p>
             <p className={styles.bodyText}>
-              At Sasi Maligai Kadai, we believe in simple values: providing our neighbors with the highest standard of products and a welcoming space to start their morning. Whether you stop by for our signature fresh cardamom tea, a quick crispy snack, or to stock up on premium kitchen staples, you receive the same signature hospitality that defines our brand.
+              At Sasi Tea Stall, we believe in simple values: providing our neighbors with the highest standard of products and a welcoming space to start their morning. Whether you stop by for our signature fresh cardamom tea, a quick crispy snack, or to stock up on premium kitchen staples, you receive the same signature hospitality that defines our brand.
             </p>
           </motion.div>
 

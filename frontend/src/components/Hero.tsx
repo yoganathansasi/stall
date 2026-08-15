@@ -31,7 +31,7 @@ export default function Hero() {
               <span className={styles.titleEm}>Chai &amp; Comfort</span>
             </h1>
             <p className={styles.description}>
-              Welcome to Sasi Maligai Kadai, Jolarpet’s legendary local hub serving rich, authentic masala teas, crispy fresh snacks, and carefully curated daily provisions.
+              Welcome to Sasi Tea Stall, Jolarpet’s legendary local hub serving rich, authentic masala teas, crispy fresh snacks, and carefully curated daily provisions.
             </p>
             <div className={styles.btnGroup}>
               <button onClick={() => scrollToSection("menu")} className={styles.primaryBtn}>

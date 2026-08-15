@@ -87,7 +87,7 @@ export default function LocationContact() {
                 allowFullScreen={false}
                 loading="lazy"
                 referrerPolicy="no-referrer-when-downgrade"
-                title="Google Maps location of Sasi Maligai Kadai"
+                title="Google Maps location of Sasi Tea Stall"
               />
             </div>
             <div className={styles.mapBtnContainer}>
