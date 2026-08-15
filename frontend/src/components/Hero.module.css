@@ -1,0 +1,246 @@
+.heroSection {
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  position: relative;
+  padding: 120px 0 80px;
+  background-color: var(--primary-deep);
+  color: var(--text-light);
+  overflow: hidden;
+}
+
+.heroBackground {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  opacity: 0.15;
+  background-image: radial-gradient(circle at 80% 20%, var(--primary-light) 0%, transparent 50%);
+  pointer-events: none;
+}
+
+.heroGrid {
+  display: grid;
+  grid-template-columns: 1.1fr 0.9fr;
+  align-items: center;
+  gap: var(--spacing-xl);
+}
+
+.heroContent {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  z-index: 10;
+}
+
+.tagline {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  font-weight: 600;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  margin-bottom: var(--spacing-sm);
+}
+
+.title {
+  font-size: 4.5rem;
+  font-weight: 300;
+  line-height: 1.1;
+  margin-bottom: var(--spacing-md);
+  color: #ffffff;
+  font-family: var(--font-serif);
+}
+
+.titleEm {
+  font-family: var(--font-serif);
+  font-style: italic;
+  font-weight: 400;
+  color: var(--accent-gold);
+}
+
+.description {
+  font-family: var(--font-sans);
+  font-size: 1.1rem;
+  font-weight: 300;
+  line-height: 1.8;
+  color: var(--text-light-muted);
+  margin-bottom: var(--spacing-lg);
+  max-width: 520px;
+}
+
+.btnGroup {
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.primaryBtn {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  background-color: var(--accent-gold);
+  color: var(--primary-deep);
+  border: none;
+  cursor: pointer;
+  border-radius: 4px;
+  transition: var(--transition-fast);
+}
+
+.primaryBtn:hover {
+  background-color: #ffffff;
+  transform: translateY(-2px);
+}
+
+.secondaryBtn {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 16px 36px;
+  background-color: transparent;
+  color: #ffffff;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  cursor: pointer;
+  border-radius: 4px;
+  transition: var(--transition-fast);
+}
+
+.secondaryBtn:hover {
+  border-color: var(--accent-gold);
+  color: var(--accent-gold);
+  transform: translateY(-2px);
+}
+
+.heroVisual {
+  position: relative;
+  width: 100%;
+  height: 520px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 25px 50px -12px rgba(0, 0, 0, 0.5);
+  border: 1px solid var(--border-dark);
+  animation: floatCup 7s infinite ease-in-out;
+}
+
+.heroVisual::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(to bottom, transparent 60%, rgba(11, 29, 18, 0.4) 100%);
+  z-index: 2;
+}
+
+/* Live Steam Animation Overlay */
+.steamContainer {
+  position: absolute;
+  bottom: 22%;
+  left: 56%;
+  width: 50px;
+  height: 140px;
+  z-index: 5;
+  pointer-events: none;
+}
+
+.steamLine {
+  position: absolute;
+  bottom: 0;
+  width: 15px;
+  height: 100%;
+  opacity: 0;
+  filter: blur(3px);
+}
+
+.steamLine1 {
+  left: 5px;
+  animation: riseAndFade 6s infinite ease-in-out;
+}
+
+.steamLine2 {
+  left: 18px;
+  animation: riseAndFade 6s infinite ease-in-out;
+  animation-delay: 2s;
+}
+
+.steamLine3 {
+  left: 28px;
+  animation: riseAndFade 6s infinite ease-in-out;
+  animation-delay: 4s;
+}
+
+.steamSvg {
+  width: 100%;
+  height: 100%;
+}
+
+@keyframes floatCup {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-8px);
+  }
+}
+
+@keyframes riseAndFade {
+  0% {
+    transform: translateY(30px) scaleX(0.8) skewX(-2deg);
+    opacity: 0;
+  }
+  15% {
+    opacity: 0.65;
+  }
+  50% {
+    transform: translateY(-30px) scaleX(1.1) skewX(4deg);
+    opacity: 0.35;
+  }
+  90% {
+    opacity: 0;
+  }
+  100% {
+    transform: translateY(-100px) scaleX(1.4) skewX(-4deg);
+    opacity: 0;
+  }
+}
+
+@media (max-width: 1024px) {
+  .title {
+    font-size: 3.5rem;
+  }
+  .heroVisual {
+    height: 400px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heroSection {
+    padding: 100px 0 60px;
+    min-height: auto;
+  }
+  .heroGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  .title {
+    font-size: 3rem;
+  }
+  .heroVisual {
+    height: 320px;
+    order: -1;
+  }
+  .btnGroup {
+    flex-direction: column;
+    gap: var(--spacing-sm);
+  }
+  .primaryBtn, .secondaryBtn {
+    width: 100%;
+    text-align: center;
+  }
+}

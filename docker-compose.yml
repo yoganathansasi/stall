@@ -1,0 +1,42 @@
+version: '3.8'
+
+services:
+  # Database Service (PostgreSQL)
+  db:
+    image: postgres:16-alpine
+    container_name: smk_db
+    restart: always
+    environment:
+      POSTGRES_DB: sasi_maligai_kadai
+      POSTGRES_USER: postgres
+      POSTGRES_PASSWORD: postgres
+    ports:
+      - "5432:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+      - ./db/schema.sql:/docker-entrypoint-initdb.d/schema.sql # Seed DB on init
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U postgres -d sasi_maligai_kadai"]
+      interval: 5s
+      timeout: 5s
+      retries: 5
+
+  # Go API Service
+  api:
+    build:
+      context: ./backend
+      dockerfile: Dockerfile
+    container_name: smk_api
+    restart: always
+    ports:
+      - "8080:8080"
+    environment:
+      PORT: 8080
+      DATABASE_URL: postgres://postgres:postgres@db:5432/sasi_maligai_kadai?sslmode=disable
+      ALLOWED_CORS: http://localhost:3000
+    depends_on:
+      db:
+        condition: service_healthy
+
+volumes:
+  pgdata:

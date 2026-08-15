@@ -1,0 +1,114 @@
+.section {
+  background-color: #ffffff;
+  border-top: 1px solid var(--border-light);
+  border-bottom: 1px solid var(--border-light);
+}
+
+.headerContainer {
+  max-width: 600px;
+  margin: 0 auto var(--spacing-xl) auto;
+}
+
+.heading {
+  font-size: 2.8rem;
+  color: var(--primary-deep);
+  margin-top: var(--spacing-xs);
+  font-weight: 400;
+}
+
+.tabsContainer {
+  display: flex;
+  justify-content: center;
+  gap: var(--spacing-sm);
+  margin-bottom: var(--spacing-xl);
+}
+
+.tabBtn {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 10px 24px;
+  background: none;
+  border: 1px solid transparent;
+  color: var(--text-muted);
+  cursor: pointer;
+  border-radius: 30px;
+  transition: var(--transition-fast);
+}
+
+.tabBtn:hover {
+  color: var(--primary-deep);
+}
+
+.tabBtnActive {
+  background-color: var(--primary-deep);
+  color: #ffffff;
+  border-color: var(--primary-deep);
+}
+
+.menuGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-xl) var(--spacing-lg);
+}
+
+.menuItemCard {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  padding-bottom: var(--spacing-md);
+  border-bottom: 1px dashed rgba(28, 53, 36, 0.15);
+  position: relative;
+  transition: var(--transition-fast);
+}
+
+.menuItemCard:hover {
+  transform: translateX(5px);
+}
+
+.itemInfo {
+  max-width: 80%;
+}
+
+.itemName {
+  font-family: var(--font-serif);
+  font-size: 1.4rem;
+  font-weight: 500;
+  color: var(--primary-deep);
+  margin-bottom: var(--spacing-xs);
+}
+
+.itemDesc {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-muted);
+  line-height: 1.6;
+}
+
+.itemPrice {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  font-weight: 600;
+  color: var(--accent-gold-dark);
+  white-space: nowrap;
+}
+
+@media (max-width: 768px) {
+  .menuGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  .heading {
+    font-size: 2.2rem;
+  }
+  .tabsContainer {
+    flex-wrap: wrap;
+    gap: var(--spacing-xs);
+  }
+  .tabBtn {
+    padding: 8px 16px;
+    font-size: 0.75rem;
+  }
+}

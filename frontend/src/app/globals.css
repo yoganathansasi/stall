@@ -1,0 +1,177 @@
+/* Sasi Maligai Kadai - Premium Design System (Vanilla CSS) */
+
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;0,600;0,700;1,400&family=Inter:wght@300;400;500;600;700&display=swap');
+
+:root {
+  /* Brand Color Palette */
+  --primary-deep: #0b1d12;       /* Ultra-deep forest green */
+  --primary-moss: #1c3524;       /* Rich moss green */
+  --primary-light: #2d5237;      /* Sage green */
+  
+  --accent-gold: #c5a880;        /* Warm antique gold */
+  --accent-gold-dark: #ab8e65;   /* Deep gold */
+  --accent-gold-light: #dfcbb3;  /* Soft champagne gold */
+
+  --bg-sand: #FAF8F5;            /* Soft sand/cream background */
+  --bg-sand-dark: #F2EDE4;       /* Slightly darker cream for cards */
+  --bg-dark: #0a0e0b;            /* Premium dark mode background */
+  --bg-card-dark: #121814;       /* Dark card background */
+
+  --text-dark: #1d211e;          /* Off-black for text */
+  --text-muted: #5e6660;         /* Muted gray-green text */
+  --text-light: #eae6df;         /* Soft white for dark sections */
+  --text-light-muted: #9fa7a1;   /* Muted light text */
+
+  --border-light: rgba(28, 53, 36, 0.08);
+  --border-dark: rgba(197, 168, 128, 0.15);
+
+  --font-serif: 'Cormorant Garamond', serif;
+  --font-sans: 'Inter', sans-serif;
+
+  /* Spacing system */
+  --spacing-xs: 0.5rem;
+  --spacing-sm: 1rem;
+  --spacing-md: 1.5rem;
+  --spacing-lg: 2.5rem;
+  --spacing-xl: 4rem;
+  --spacing-xxl: 6rem;
+
+  --transition-smooth: all 0.5s cubic-bezier(0.16, 1, 0.3, 1);
+  --transition-fast: all 0.25s ease;
+}
+
+/* CSS Reset & Global Styling */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html, body {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-size: 16px;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+body {
+  background-color: var(--bg-sand);
+  color: var(--text-dark);
+  font-family: var(--font-sans);
+  line-height: 1.6;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-serif);
+  font-weight: 500;
+  line-height: 1.2;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+  transition: var(--transition-fast);
+}
+
+button, input, textarea {
+  font-family: inherit;
+}
+
+/* Scrollbar styling */
+::-webkit-scrollbar {
+  width: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-sand);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--primary-moss);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-gold);
+}
+
+/* Utility Layout Classes */
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 var(--spacing-md);
+}
+
+.section {
+  padding: var(--spacing-xxl) 0;
+  position: relative;
+}
+
+.section-dark {
+  background-color: var(--primary-deep);
+  color: var(--text-light);
+}
+
+/* Flex & Grid layouts */
+.grid {
+  display: grid;
+  gap: var(--spacing-md);
+}
+
+.grid-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--spacing-lg);
+}
+
+.grid-3 {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--spacing-lg);
+}
+
+/* Text Utilities */
+.text-center {
+  text-align: center;
+}
+
+.text-gold {
+  color: var(--accent-gold);
+}
+
+.title-sub {
+  font-family: var(--font-sans);
+  text-transform: uppercase;
+  font-size: 0.85rem;
+  letter-spacing: 0.15em;
+  font-weight: 600;
+  color: var(--accent-gold);
+  margin-bottom: var(--spacing-sm);
+  display: block;
+}
+
+.title-large {
+  font-size: 3rem;
+  margin-bottom: var(--spacing-md);
+  color: var(--primary-deep);
+}
+
+.section-dark .title-large {
+  color: #ffffff;
+}
+
+@media (max-width: 768px) {
+  .title-large {
+    font-size: 2.2rem;
+  }
+  .grid-2, .grid-3 {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-md);
+  }
+  .section {
+    padding: var(--spacing-xl) 0;
+  }
+}

@@ -1,0 +1,129 @@
+.footer {
+  background-color: var(--primary-deep);
+  color: var(--text-light);
+  padding: var(--spacing-xxl) 0 var(--spacing-md) 0;
+  border-top: 1px solid var(--border-dark);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1.5fr 1fr 1fr;
+  gap: var(--spacing-xxl);
+  margin-bottom: var(--spacing-xl);
+}
+
+.brandCol {
+  display: flex;
+  flex-direction: column;
+}
+
+.logoText {
+  font-family: var(--font-serif);
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #ffffff;
+  letter-spacing: 0.02em;
+  line-height: 1.1;
+  margin-bottom: 4px;
+}
+
+.logoSubText {
+  font-family: var(--font-sans);
+  font-size: 0.7rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  color: var(--accent-gold);
+  letter-spacing: 0.25em;
+  margin-bottom: var(--spacing-md);
+}
+
+.brandDesc {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-light-muted);
+  line-height: 1.8;
+  max-width: 320px;
+}
+
+.title {
+  font-family: var(--font-serif);
+  font-size: 1.3rem;
+  color: #ffffff;
+  margin-bottom: var(--spacing-md);
+  font-weight: 500;
+}
+
+.linksList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  list-style: none;
+}
+
+.link {
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-light-muted);
+  transition: var(--transition-fast);
+  cursor: pointer;
+}
+
+.link:hover {
+  color: var(--accent-gold);
+  padding-left: 4px;
+}
+
+.hoursList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-xs);
+  font-family: var(--font-sans);
+  font-size: 0.85rem;
+  color: var(--text-light-muted);
+}
+
+.hoursDay {
+  color: #ffffff;
+  font-weight: 500;
+}
+
+/* Bottom Bar */
+.bottomBar {
+  border-top: 1px solid rgba(255, 255, 255, 0.05);
+  padding-top: var(--spacing-md);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.copyright {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--text-light-muted);
+}
+
+.signature {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  color: var(--text-light-muted);
+}
+
+.signatureLink {
+  color: var(--accent-gold);
+}
+
+.signatureLink:hover {
+  text-decoration: underline;
+}
+
+@media (max-width: 768px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  .bottomBar {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+    text-align: center;
+  }
+}

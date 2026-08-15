@@ -1,0 +1,136 @@
+.section {
+  background-color: #ffffff;
+  border-bottom: 1px solid var(--border-light);
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 0.9fr 1.1fr;
+  gap: var(--spacing-xxl);
+  align-items: stretch;
+}
+
+.contentContainer {
+  display: flex;
+  flex-direction: column;
+}
+
+.heading {
+  font-size: 2.8rem;
+  color: var(--primary-deep);
+  margin-bottom: var(--spacing-lg);
+  font-weight: 400;
+}
+
+.infoCardsList {
+  display: flex;
+  flex-direction: column;
+  gap: var(--spacing-md);
+}
+
+.infoCard {
+  background-color: var(--bg-sand);
+  padding: var(--spacing-lg);
+  border-radius: 8px;
+  border: 1px solid var(--border-light);
+  box-shadow: 0 10px 30px rgba(28, 53, 36, 0.02);
+  transition: var(--transition-smooth);
+}
+
+.infoCard:hover {
+  border-color: var(--accent-gold);
+  transform: translateX(4px);
+  box-shadow: 0 15px 35px rgba(28, 53, 36, 0.05);
+}
+
+.infoTitle {
+  font-family: var(--font-serif);
+  font-size: 1.35rem;
+  color: var(--primary-deep);
+  margin-bottom: var(--spacing-xs);
+  display: flex;
+  align-items: center;
+  gap: var(--spacing-xs);
+}
+
+.infoIcon {
+  color: var(--accent-gold-dark);
+}
+
+.infoDetail {
+  font-family: var(--font-sans);
+  font-size: 0.9rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+}
+
+/* Map Column */
+.mapColumn {
+  display: flex;
+  flex-direction: column;
+}
+
+.mapWrapper {
+  position: relative;
+  width: 100%;
+  flex-grow: 1;
+  min-height: 400px;
+  border-radius: 12px;
+  overflow: hidden;
+  box-shadow: 0 20px 40px rgba(0, 0, 0, 0.04);
+  border: 1px solid var(--border-light);
+}
+
+.mapIframe {
+  width: 100%;
+  height: 100%;
+  border: none;
+}
+
+.mapBtnContainer {
+  margin-top: var(--spacing-md);
+  display: flex;
+  gap: var(--spacing-md);
+}
+
+.mapLinkBtn {
+  font-family: var(--font-sans);
+  font-size: 0.8rem;
+  font-weight: 600;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  padding: 14px 24px;
+  border-radius: 4px;
+  background-color: transparent;
+  color: var(--primary-deep);
+  border: 1px solid var(--primary-deep);
+  cursor: pointer;
+  transition: var(--transition-fast);
+  text-align: center;
+  flex-grow: 1;
+}
+
+.mapLinkBtn:hover {
+  background-color: var(--primary-deep);
+  color: #ffffff;
+}
+
+@media (max-width: 1024px) {
+  .grid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-xl);
+  }
+  .mapWrapper {
+    min-height: 350px;
+  }
+}
+
+@media (max-width: 768px) {
+  .heading {
+    font-size: 2.2rem;
+  }
+  .mapBtnContainer {
+    flex-direction: column;
+    gap: var(--spacing-xs);
+  }
+}
