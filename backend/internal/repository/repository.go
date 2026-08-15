@@ -252,20 +252,20 @@ func NewInMemoryRepository() *InMemoryRepository {
 }
 
 func (r *InMemoryRepository) GetMenuItems(ctx context.Context) ([]model.MenuItem, error) {
-	r.RLock()
-	defer r.RUnlock()
+	r.mu.RLock()
+	defer r.mu.RUnlock()
 	return r.menuItems, nil
 }
 
 func (r *InMemoryRepository) GetGroceryItems(ctx context.Context) ([]model.GroceryItem, error) {
-	r.RLock()
-	defer r.RUnlock()
+	r.mu.RLock()
+	defer r.mu.RUnlock()
 	return r.groceryItems, nil
 }
 
 func (r *InMemoryRepository) SaveContactSubmission(ctx context.Context, s *model.ContactSubmission) error {
-	r.Lock()
-	defer r.Unlock()
+	r.mu.Lock()
+	defer r.mu.Unlock()
 	
 	if s.Name == "" || s.Email == "" || s.Message == "" {
 		return errors.New("missing required contact submission fields")
@@ -282,14 +282,14 @@ func (r *InMemoryRepository) SaveContactSubmission(ctx context.Context, s *model
 }
 
 func (r *InMemoryRepository) GetReviews(ctx context.Context) ([]model.Review, error) {
-	r.RLock()
-	defer r.RUnlock()
+	r.mu.RLock()
+	defer r.mu.RUnlock()
 	return r.reviews, nil
 }
 
 func (r *InMemoryRepository) SaveReview(ctx context.Context, s *model.Review) error {
-	r.Lock()
-	defer r.Unlock()
+	r.mu.Lock()
+	defer r.mu.Unlock()
 
 	if s.Name == "" || s.Comment == "" || s.Rating < 1 || s.Rating > 5 {
 		return errors.New("invalid review fields")
