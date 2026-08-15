@@ -38,7 +38,8 @@ export default function BeveragesBites() {
 
   useEffect(() => {
     // Attempt to load from Go backend
-    fetch("http://localhost:8080/api/menu")
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+    fetch(`${apiUrl}/api/menu`)
       .then((res) => {
         if (!res.ok) throw new Error("Server responded with error");
         return res.json();

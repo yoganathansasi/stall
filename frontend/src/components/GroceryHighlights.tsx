@@ -28,7 +28,8 @@ export default function GroceryHighlights() {
   const [items, setItems] = useState<GroceryItem[]>(FALLBACK_GROCERIES);
 
   useEffect(() => {
-    fetch("http://localhost:8080/api/groceries")
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+    fetch(`${apiUrl}/api/groceries`)
       .then((res) => {
         if (!res.ok) throw new Error("Server error");
         return res.json();

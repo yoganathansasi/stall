@@ -28,7 +28,8 @@ export default function Reviews() {
   const [errorMessage, setErrorMessage] = useState("");
 
   const fetchReviews = () => {
-    fetch("http://localhost:8080/api/reviews")
+    const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+    fetch(`${apiUrl}/api/reviews`)
       .then((res) => {
         if (!res.ok) throw new Error("Failed to load");
         return res.json();
@@ -61,7 +62,8 @@ export default function Reviews() {
     setSubmitStatus("submitting");
 
     try {
-      const response = await fetch("http://localhost:8080/api/reviews", {
+      const apiUrl = process.env.NEXT_PUBLIC_API_URL || "http://localhost:8080";
+      const response = await fetch(`${apiUrl}/api/reviews`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

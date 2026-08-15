@@ -56,7 +56,6 @@ func main() {
 	mux.HandleFunc("GET /api/reviews", h.GetReviews)
 	mux.HandleFunc("OPTIONS /api/reviews", h.GetReviews)
 	mux.HandleFunc("POST /api/reviews", h.SubmitReview)
-	mux.HandleFunc("OPTIONS /api/reviews", h.SubmitReview)
 
 	// Health check
 	mux.HandleFunc("GET /health", func(w http.ResponseWriter, r *http.Request) {
