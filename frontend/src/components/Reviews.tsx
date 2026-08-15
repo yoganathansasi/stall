@@ -29,7 +29,7 @@ const slideVariants = {
     opacity: 1,
     transition: {
       duration: 0.3,
-      ease: "easeInOut",
+      ease: "easeInOut" as const,
     },
   },
   exit: (direction: number) => ({
@@ -37,7 +37,7 @@ const slideVariants = {
     opacity: 0,
     transition: {
       duration: 0.3,
-      ease: "easeInOut",
+      ease: "easeInOut" as const,
     },
   }),
 };
