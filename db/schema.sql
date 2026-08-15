@@ -71,7 +71,7 @@ INSERT INTO grocery_highlights (name, description, category) VALUES
 ('Premium Cooking Rice (அரிசி)', 'High-grade, clean daily cooking rice bags, selected for taste and texture.', 'staples'),
 ('Fine White Sugar (சர்க்கரை)', 'Pure, fine white sugar bags for sweets, tea, and daily kitchen use.', 'staples'),
 ('Quality Paruppu & Dals (பருப்பு)', 'Essential lentils including Toor dal, Urad dal, and Moong dal for healthy cooking.', 'staples'),
-('Wheat Flour Atta (கோடி)', 'Fresh, finely ground wheat flour bags for soft rotis and chapatis.', 'staples'),
+('Wheat Flour Atta (கோதுமை மாவு)', 'Fresh, finely ground wheat flour bags for soft rotis and chapatis.', 'staples'),
 ('Maggi Instant Noodles (மேகி)', 'Quick, delicious, and convenient Maggi noodle packs, a favorite for kids.', 'staples'),
 ('Bathing & Laundry Soaps (சோப்பு)', 'Leading brands of bathing soaps (Lux, Lifebuoy) and cleaning soaps (Rin) on our shelves.', 'daily'),
 ('Daily Fresh Shampoo Sachets (ஷாம்பு)', 'Convenient single-use sachets of top shampoo brands (Clinic Plus, Chik) for clean hair care.', 'daily'),

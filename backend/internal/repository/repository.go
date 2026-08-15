@@ -234,7 +234,7 @@ func NewInMemoryRepository() *InMemoryRepository {
 		{ID: 1, Name: "Premium Cooking Rice (அரிசி)", Description: "High-grade, clean daily cooking rice bags, selected for taste and texture.", Category: "staples", IsFeatured: true, CreatedAt: time.Now()},
 		{ID: 2, Name: "Fine White Sugar (சர்க்கரை)", Description: "Pure, fine white sugar bags for sweets, tea, and daily kitchen use.", Category: "staples", IsFeatured: true, CreatedAt: time.Now()},
 		{ID: 3, Name: "Quality Paruppu & Dals (பருப்பு)", Description: "Essential lentils including Toor dal, Urad dal, and Moong dal for healthy cooking.", Category: "staples", IsFeatured: true, CreatedAt: time.Now()},
-		{ID: 4, Name: "Wheat Flour Atta (கோடி)", Description: "Fresh, finely ground wheat flour bags for soft rotis and chapatis.", Category: "staples", IsFeatured: true, CreatedAt: time.Now()},
+		{ID: 4, Name: "Wheat Flour Atta (கோதுமை மாவு)", Description: "Fresh, finely ground wheat flour bags for soft rotis and chapatis.", Category: "staples", IsFeatured: true, CreatedAt: time.Now()},
 		{ID: 5, Name: "Maggi Instant Noodles (மேகி)", Description: "Quick, delicious, and convenient Maggi noodle packs, a favorite for kids.", Category: "staples", IsFeatured: true, CreatedAt: time.Now()},
 		{ID: 6, Name: "Bathing & Laundry Soaps (சோப்பு)", Description: "Leading brands of bathing soaps (Lux, Lifebuoy) and cleaning soaps (Rin) on our shelves.", Category: "daily", IsFeatured: true, CreatedAt: time.Now()},
 		{ID: 7, Name: "Daily Fresh Shampoo Sachets (ஷாம்பு)", Description: "Convenient single-use sachets of top shampoo brands (Clinic Plus, Chik) for clean hair care.", Category: "daily", IsFeatured: true, CreatedAt: time.Now()},

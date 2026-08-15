@@ -17,7 +17,7 @@ const FALLBACK_GROCERIES: GroceryItem[] = [
   { id: 1, name: "Premium Cooking Rice (அரிசி)", description: "High-grade, clean daily cooking rice bags, selected for taste and texture.", category: "staples" },
   { id: 2, name: "Fine White Sugar (சர்க்கரை)", description: "Pure, fine white sugar bags for sweets, tea, and daily kitchen use.", category: "staples" },
   { id: 3, name: "Quality Paruppu & Dals (பருப்பு)", description: "Essential lentils including Toor dal, Urad dal, and Moong dal for healthy cooking.", category: "staples" },
-  { id: 4, name: "Wheat Flour Atta (கோடி)", description: "Fresh, finely ground wheat flour bags for soft rotis and chapatis.", category: "staples" },
+  { id: 4, name: "Wheat Flour Atta (கோதுமை மாவு)", description: "Fresh, finely ground wheat flour bags for soft rotis and chapatis.", category: "staples" },
   { id: 5, name: "Maggi Instant Noodles (மேகி)", description: "Quick, delicious, and convenient Maggi noodle packs, a favorite for kids.", category: "staples" },
   { id: 6, name: "Bathing & Laundry Soaps (சோப்பு)", description: "Leading brands of bathing soaps (Lux, Lifebuoy) and cleaning soaps (Rin) on our shelves.", category: "daily" },
   { id: 7, name: "Daily Fresh Shampoo Sachets (ஷாம்பு)", description: "Convenient single-use sachets of top shampoo brands (Clinic Plus, Chik) for clean hair care.", category: "daily" },
